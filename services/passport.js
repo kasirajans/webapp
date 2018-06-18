@@ -1,9 +1,6 @@
-const express = require('express');
-const app = express();
 const passport =require('passport');
 const GoogleStrategy=require('passport-google-oauth20').Strategy;
-const keys =require('./config/keys');
-
+const keys =require('../config/keys');
 
 passport.use(new GoogleStrategy(
     {
@@ -17,17 +14,3 @@ passport.use(new GoogleStrategy(
 
     }
 ));
-
-const PORT = process.env.PORT || 3000;
-// passport.authenticate google will invoke google stratergy 
-app.get('/auth/google',passport.authenticate('google',{
-scope:['profile','email']
-})
-);
-
-// This time passport.authenticate google will see the code query string and will 
-app.get('/auth/google/callback',passport.authenticate('google'));
-
-
-app.listen(3000);
-
