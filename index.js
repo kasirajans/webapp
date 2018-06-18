@@ -5,6 +5,7 @@ const app = express();
 require('./services/passport');
 
 
+require('./routes/authRoutes')(app);
 const PORT = process.env.PORT || 3000;
 // passport.authenticate google will invoke google stratergy 
 

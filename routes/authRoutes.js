@@ -1,5 +1,7 @@
 
+const passport=require('passport');
 
+module.exports=(app)=>{
 app.get('/auth/google',passport.authenticate('google',{
     scope:['profile','email']
     })
@@ -7,3 +9,4 @@ app.get('/auth/google',passport.authenticate('google',{
     
     // This time passport.authenticate google will see the code query string and will 
     app.get('/auth/google/callback',passport.authenticate('google'));
+};
