@@ -4,6 +4,7 @@ const app = express();
 const keys =require('./config/keys')
 require('./models/User')
 
+//just check
 //Make sure files is excuted 
 require('./services/passport');
 
