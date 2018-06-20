@@ -15,12 +15,13 @@ app.get('/auth/google',passport.authenticate('google',{
 
         //passport will automaticall detect the logout function and clear user session
 req.logout();
-res.send(req.user);
+res.send(req.session);
 
     });
 
     app.get('/api/current_user',(req,res)=>{
 
-        res.send(req.user);
+       res.send(req.user);
+       // res.send(req.session);
     });
 };
