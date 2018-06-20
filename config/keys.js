@@ -1,4 +1,4 @@
-if(process.env.NODE_ENV==='prodcution')
+if(APPSETTING_NODE_ENV==='prodcution')
 {
     module.exports=require('./prod.js');
 }
