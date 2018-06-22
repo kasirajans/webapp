@@ -24,7 +24,12 @@ passport.use(new GoogleStrategy(
     {
         clientID: keys.googleClientID,
         clientSecret: keys.googleClientSecret,
-        callbackURL: '/auth/google/callback'
+        /* //call back is using relative path "/auth/google" so google ginving redirect uri missmatch
+        // here Google strategy giving error due to LB or proxy inbetween the webapp service and the browser.
+        //We need to trust this proxy  */
+        callbackURL: '/auth/google/callback',
+        //This proxy will trust by google strategy and send redirt URI to https by passport
+        proxy:true
     },(accessToken,refreshToken,profile,done)=>{
 
         

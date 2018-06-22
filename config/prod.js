@@ -2,8 +2,8 @@
 
 module.exports={
 
-    googleClientID:APPSETTING_GOOGLE_CLIENT_ID,
-    googleClientSecret:APPSETTING_GOOGLE_CLIENT_SECRET,
-    mongoURI: APPSETTING_MONGO_URI,
-    cookieKey:APPSETTING_COOKIE_KEY
+    googleClientID: process.env.GOOGLE_CLIENT_ID,
+    googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    mongoURI: process.env.MONGO_URI,
+    cookieKey: process.env.COOKIE_KEY
 };
